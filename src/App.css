@@ -1,0 +1,27 @@
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: flex-start;
+}
+
+.flex-item {
+  height: 100px;
+  width: 100px;
+  background-color: #b93c2f;
+  border: 1px solid #626262;
+  margin: 3px;
+  user-select: none;
+}
+
+.selectedItem {
+  background-color: chartreuse;
+}
