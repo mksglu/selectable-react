@@ -3,6 +3,8 @@
     flex-wrap: wrap;
     align-content: stretch;
     justify-content: flex-start;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .item-selected {
@@ -15,5 +17,5 @@
 }
 
 .secili {
-    background-color: chartreuse;
+    background-color: blue;
 }

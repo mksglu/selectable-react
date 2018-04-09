@@ -1,37 +1,57 @@
-import React, { Component, Fragment } from "react"
-import ReactDOM from "react-dom"
+import React, { Component } from "react"
+import "../App.css"
 import mockData from "./data"
-// yarn add selectable-react
-import ReactSelectable from "selectable-react"
+import ReactSelectable from "../Selectable"
+import logo from "./logo.svg"
 
-import "./App.css"
-// import SelectableGroup from './SelectableGroup'
 class App extends Component {
-  // generates random items
-  renderSelectableDivs() {
-    return mockData.map((mockItem, index) => {
-      return (
-        <div key={index}>
-          <br />
+  constructor(props) {
+    super(props)
+    this.state = {
+      item: [],
+      selectedItem: []
+    }
+  }
 
-          <div style={{ width: 400, height: 50 }}>
-            {mockItem.title} - {mockItem.year}
-          </div>
-          <br />
-        </div>
-      )
+  componentDidMount() {
+    this.setState({
+      item: mockData
     })
   }
 
   render() {
-    const dummyElements = this.renderSelectableDivs()
     return (
-      <ReactSelectable
-        selectedItemClassName="secili item-selected"
-        containerClassName="selectable-container"
-      >
-        {dummyElements}
-      </ReactSelectable>
+      <div className="App">
+        <header className="App-header">
+          <div className="output">
+            {this.state.selectedItem.map((itemList, index) => (
+              <li key={index}>{itemList}</li>
+            ))}
+          </div>
+          <img src={logo} className="App-logo" alt="logo" />{" "}
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
+
+        <ReactSelectable
+          selectedItemClassName="secili item-selected"
+          containerClassName="selectable-container"
+          onSelectChange={item => this.setState({ selectedItem: item })}
+        >
+          {this.state.item.map((mockItem, index) => {
+            return <div key={index}>{mockItem.name}</div>
+          })}
+        </ReactSelectable>
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />{" "}
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
+      </div>
     )
   }
 }
