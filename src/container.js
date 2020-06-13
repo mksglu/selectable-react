@@ -1,8 +1,9 @@
 import React from 'react'
 import Item from './item'
 const container = (props) => {
+
   return (
-    <div   ref={(ref) => props.container(ref)}>
+    <div  >
      <div style={{display:"flex"}}>
       <div style={{
          userSelect: 'none',
@@ -38,7 +39,7 @@ const container = (props) => {
         height: '500px',
         margin: '100px',
         border: '1px solid red'}}>sdsadsdsa</div>
-      <div
+      <div ref={(ref) => props.container(ref)}
       style={{
         userSelect: 'none',
         width: '500px',
@@ -48,11 +49,11 @@ const container = (props) => {
       }}
 
     >
-      <div style={{  margin:"200px",
+      <div   style={{  margin:"200px",
 
         border: '1px solid red'}}>
 
-
+          {console.log(props.children)}
           <Item  {...props}>{props.children}</Item>
 
 

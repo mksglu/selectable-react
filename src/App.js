@@ -1,25 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Container from './s'
+
 
 function App() {
+  const data = [
+    { name: "Bumblebee" },
+    { name: "Jazz" },
+    { name: "İronhide" },
+    { name: "Megatron" },
+    { name: "Blackout" },
+    { name: "Scorponok" }
+  ]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <Container>{data.map((mockItem, index) => {
+    return <div key={index}>{mockItem.name}</div>
+  })}</Container>
   );
 }
 

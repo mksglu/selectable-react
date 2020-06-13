@@ -1,9 +1,9 @@
 import React from 'react';
 const selectionRect = ({
-  height, left, top, width, isRectActive, background, border,
+  height, left, top, width, mouseInContainer,mouseUp, background, border,
 }) => {
-  const rectDisplay = isRectActive ? { display: 'block' } : { display: 'none' };
-  const rectResize = height && left && top && width && {
+  const rectDisplay = !mouseUp  ? { display: 'block' } : { display: 'none' };
+  const rectResize =  {
     height, left, top, width,
   };
   const rectStyle = {

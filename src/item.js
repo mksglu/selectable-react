@@ -9,6 +9,7 @@ class item extends Component {
         }
     }
     componentDidUpdate(x,y){
+
         if(x.isRectActive){
             // console.log(x,y)
             this.selected(x)
@@ -16,6 +17,7 @@ class item extends Component {
 
     }
     selected = (props) => {
+        // console.log(props)
         const domNode = this.item.getBoundingClientRect();
         const isRectSelected = !(props.top-props._rY + props.currentMousePositionY < domNode.top || props.top-props._rY   >  domNode.top + domNode.height || props.left-props._rX + props.currentMousePositionX < domNode.left || props.left-props._rX  > domNode.left + domNode.width )
         if(isRectSelected){
