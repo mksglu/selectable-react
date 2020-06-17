@@ -53,7 +53,7 @@ const container = (props) => {
 
         border: '1px solid red'}}>
 
-          {console.log(props.children)}
+          {/* {console.log(props.children)} */}
           <Item  {...props}>{props.children}</Item>
 
 

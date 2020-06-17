@@ -2,7 +2,7 @@ import React from 'react';
 const selectionRect = ({
   height, left, top, width, mouseInContainer,mouseUp, background, border,
 }) => {
-  const rectDisplay = !mouseUp  ? { display: 'block' } : { display: 'none' };
+  const rectDisplay = !mouseUp && mouseInContainer ? { display: 'block' } : { display: 'none' };
   const rectResize =  {
     height, left, top, width,
   };
